@@ -1,0 +1,76 @@
+ol, #numbered {
+    border: 1em solid blue;
+    padding-right: 1em;
+    padding-left: 2em;
+    float: left;
+}
+
+li.closed {
+    list-style: disc;
+}
+
+li.open {
+    list-style: circle;
+}
+
+li {
+    list-style: lower-roman;
+    margin-bottom: 8px;
+}
+
+ol.info {
+    list-style: lower-roman;
+}
+
+body {
+    counter-reset: headnum;
+    position: relative;
+}
+
+h3 {
+    border-top: 1px solid gray;
+    /* text-align: center; */
+    /* 防止 标题受到浮动的影响 */
+    clear: left;
+}
+
+/* 类选择器优先级高于元素选择器 */
+/* id 选择器高于 类选择器--同一元素情况下，不包括子元素 */
+.first-test {
+    border-top: 4px solid #7c7;
+    background-color: #efe;
+    color: #050;
+}
+
+h3::before {
+  content: "(" counter(headnum, upper-latin) ") ";
+  counter-increment: headnum;
+}
+
+h3.numbered {
+    counter-reset: mynum;
+}
+
+p.numbered::before {
+    content: counter(mynum) "：";
+    counter-increment: mynum;
+    font-weight: bold;
+}
+
+p.remark {
+    border: 2px solid red;
+    padding: 4px;
+    margin-left: 24px;
+}
+
+img {
+    border: 2px solid #ccc;
+}
+
+#fixed-pin {
+    /* relative 相对于原来的位置 absolute 相对于父元素的位置 */
+    position: absolute;
+    margin:0px; /* no margin around the elements */
+    top: 0px; /* distance from top */
+    right: 0px; /* distance from left */
+}

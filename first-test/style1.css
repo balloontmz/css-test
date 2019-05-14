@@ -1,5 +1,13 @@
+body {
+    background: url("Blue-rule.png");
+}
+
 strong {
     color: red;
+}
+
+p::before {
+    content: " " url("Yellow-pin.png");
 }
 
 .carrot {

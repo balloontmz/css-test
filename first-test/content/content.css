@@ -1,0 +1,6 @@
+.ref::before {
+    /* CSS可以在元素的前后插入文本：在选择器的后面加上::before 或者 ::after 。 */
+    font-weight: bold;
+    color: navy;
+    content: "Reference: ";
+}
