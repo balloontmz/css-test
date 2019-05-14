@@ -1,0 +1,26 @@
+body {
+    /* 顶层的字体样式 */
+    font: 16px "Comic Sans MS", cursive;
+}
+
+p {color: blue;}
+
+strong {
+    color: red; 
+    text-decoration: underline;
+    font: 200% serif;
+}
+
+/* 基于关系的选择器 */
+/* 使表格的第一个单元格字体为粗体 */
+#data-table-1 td:first-child {font-weight: bolder;}
+
+#data-table-1 td:first-child + td {font-family: monospace;}
+
+div.menu-bar ul ul {
+    display: none;
+}
+  
+div.menu-bar li:hover > ul {
+display: block;
+}
