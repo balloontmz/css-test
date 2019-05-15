@@ -24,3 +24,9 @@ div.menu-bar ul ul {
 div.menu-bar li:hover > ul {
 display: block;
 }
+
+.hr-line-div{
+    margin:0 auto;
+    height: 10px;
+    background: radial-gradient(red -24%, yellow 100%);
+}
