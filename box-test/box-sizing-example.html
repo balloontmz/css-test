@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="box-sizing-example.css">
+  <title>Document</title>
+</head>
+<body>
+  <!-- 这个示例展示了 box-sizing: border-box; 的效果和意义 -->
+  <div class="one"></div>
+
+  <div class="two"></div>
+</body>
+<script>
+  var one = document.querySelector('.one')
+  var two = document.querySelector('.two')
+
+  function outputWH(box) {
+    var width = box.offsetWidth
+    var height = box.offsetHeight
+    box.textContent = 'Width: ' + width + 'px, Height: ' + height + 'px.'
+  }
+
+  outputWH(one)
+  outputWH(two)
+</script>
+</html>
