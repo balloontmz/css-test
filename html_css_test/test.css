@@ -1,0 +1,52 @@
+@charset "utf-8";
+
+html, body {
+    height: 100%; 
+    color: #ffffff;    
+    font-family: sans-serif;           
+}
+body {
+    /* image2.jpeg */
+    background: url("amazing-image.jpeg") center center;
+    /* 这个 css 属性的意义？？？好像改变了图片的自适应 */
+    background-size: cover;
+    /* 清除浏览器对页面预设的一些默认值 */
+    margin: 0;
+    padding: 0; 
+    position: relative;
+}
+/* 内容水平居中 */
+/* id 选择器 */
+#container {
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    /* 使容器向上移动本身高度的一半 */
+    transform: translateY(-50%);
+}
+h1 {
+    font-size: 54px;
+    text-transform: uppercase;
+    /* 与下方元素的外边距 */
+    margin-bottom: 20px;
+}
+p {
+    font-size: 21px;
+    margin-bottom: 40px;
+    /* 设定外边距，防止显示拥挤混乱。 */
+    margin-left: 25px;
+    margin-right: 25px;
+}
+a {
+    font-size: 18px;
+    color:#fff;
+    /* 边框 */
+    border: 1px solid #fff;
+    /* 圆角 */
+    border-radius: 3px;
+    /* 内边距 */
+    padding: 10px 100px;
+    /* 超链接下划线 */
+    text-decoration: none;
+}
