@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh" manifest="test.manifest">
+<html lang="zh-CN" manifest="test.manifest">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,5 +9,73 @@
 </head>
 <body>
     <p>test</p>
+    <header>
+        <h1>这是一级标题</h1>
+        <nav>
+            <ul>
+                <li>栏目 1</li>
+                <li>栏目 2</li>
+                <li>栏目 3</li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+        <h2>这是二级标题</h2>
+        <article>
+            <header>这是文章头部</header>
+            <!-- <h3>这是三级标题</h3> -->
+            <p>这是文章内容</p>
+            <footer>这是文章脚部</footer>
+        </article>
+        <article>
+            <header>这是文章头部</header>
+            <!-- <h3>这是三级标题</h3> -->
+            <p>这是文章内容</p>
+            <footer>这是文章脚部</footer>
+        </article>
+    </section>
+    <section>
+        <h2>这是二级标题</h2>
+        <article>
+            <header>这是文章头部</header>
+            <!-- <h3>这是三级标题</h3> -->
+            <p>这是文章内容</p>
+            <footer>这是文章脚部</footer>
+        </article>
+        <article>
+            <header>这是文章头部</header>
+            <!-- <h3>这是三级标题</h3> -->
+            <p>这是文章内容</p>
+            <footer>这是文章脚部</footer>
+        </article>
+        <form action="/" method="post">
+            <p>
+                <label for="sex">性别</label>
+                <input type="radio" name="sex" value="male" checked>男
+                <input type="radio" name="sex" value="female">女
+            </p>
+            <fieldset>
+                <legend>性别:</legend>
+                <p><label><input type="radio" name="sex" value="male" checked>男</label></p>
+                <p><label><input type="radio" name="sex" value="male">女</label></p>
+            </fieldset>t
+            <p>
+                <label for="equipment">下拉框</label>
+                <select name="equipment">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                </select>
+            </p>
+        </form>
+    </section>
+    <aside>
+        <h2>其他相关</h2>
+        <p>这是文本描述</p>
+    </aside>
+    <footer>
+        <p>这是页面脚部</p>
+    </footer>
 </body>
 </html>

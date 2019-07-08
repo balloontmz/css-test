@@ -38,3 +38,41 @@ meta 还能强制 baidu 显示原网页而不是转码的快照。
 内容区域是网页主要内容
 侧边栏显示一些页面相关的内容
 页脚一般包含一些页脚链接、友情链接、版权申明信息等。
+
+footer 和 header 并不是区块内容，不能再放入 section。article 和 section 、aside 是区块内容
+
+**分组**
+ul 无序列表 ol 有序列表
+
+dl、dt、dd 列表显示
+
+figure 展示图片、图标等
+
+每个页面最多只能有一个 main 元素
+
+**文本**
+
+a 标签
+
+span 标签用于文本中设定一些样式。区别其他 p 标签。
+
+em、strong 强调文本。em 语义、语气加强，strong 文本重要性
+
+big、small 文本放大缩小显示
+
+q、cite 插入引用。
+
+**note：**
+采用a 标签和其他带 id 属性的元素进行锚点设置
+
+**表单**
+
+form  method 和 action 属性
+
+input  required autofocus 等属性 type name 设置不同的值能为移动端适配不同的输入框 pattern 用正则表达式规范输入
+
+单选框的实现 p 和 fieldset 元素实现
+
+select 实现下拉框
+
+buttom 提交
