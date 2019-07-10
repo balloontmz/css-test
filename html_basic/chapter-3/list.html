@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        ul {
+            /* 清除自带的边距 */
+            margin: 0;
+            padding: 0;
+        }
+        li {
+            background: #c0392b url('test.svg') no-repeat 10px 50%;
+            color: #fff;
+            list-style: none;
+            padding: 15px;
+            margin: 5px 0;
+            text-indent: 80px;
+            /* 指定背景图大小，对其进行缩放。 */
+            background-size: 30px 30px;
+            /* 设置列表横向排列 */
+            /* 设置为 框盒子方便计算宽度 */
+            box-sizing: border-box;
+            /* width: 200px; */
+            margin-right: 4%;
+            width: 22%;
+            float: left;
+            /* 指定最小宽度防止样式变形 */
+            min-width: 120px;
+        }
+        li:last-child {
+            margin-right: 0;
+        }
+        li:hover {
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+    </ul>
+</body>
+</html>

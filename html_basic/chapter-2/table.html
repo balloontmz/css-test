@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title> 
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <table>
+        <colgroup>
+            <col class="deep-green">
+            <!-- <col class="deep-green" span="2"> -->
+            <col class="light-green">
+        </colgroup>
+        <!-- 语义上的标题 -->
+        <caption>这是个表头标题，和合并单元格效果类似</caption>
+        <thead>
+            <tr>
+                <th>表头</th>
+                <th>表头</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <!-- 合并单元格 -->
+                <!-- <td colspan="1">这是个超长的表头</td> -->
+                <!-- 样式显示的是第一列的 -->
+                <td colspan="2">这是个超长的标题</td>
+            </tr>
+            <tr>
+                <td>tom</td>
+                <td>12</td>
+            </tr>
+            <tr>
+                <td>tiddler</td>
+                <td>23</td>
+            </tr>
+        </tbody>
+        
+    </table>
+</body>
+</html>
