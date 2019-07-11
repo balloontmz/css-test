@@ -5,8 +5,67 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <style>
+        * {
+            /* 清除全局内外边距 */
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background: #f3f2ef;
+            font-family: sans-serif;
+        }
+        .comic {
+            width: 44%;
+            margin: 4%;
+            float: left;
+            /* 居中 */
+            text-align: center;
+            /* 较深的灰色，区分框区域 */
+            background: #e5e8e1;
+            /* 采用阴影描绘出边框线 */
+            box-shadow: 0 0 1px rgba(0, 0, 0, .2) inset; 
+        }
+        /* 指定类下的子元素的样式 */
+        .comic h1 {
+            color: #666;
+            font-weight: normal;
+            /* 指定文字大小 */
+            font-size: 1.5em;
+        }
+        .comic img {
+            width: 60%;
+        }
+        /* 清除偶数个的元素的左外边距。从而使边框到屏幕以及屏幕到边框的距离均相等 */
+        .comic:nth-child(even){
+            margin-left: 0;
+        }
+    </style>
 </head>
 <body>
-    
+    <div class="comic">
+        <img src="1.jpg" alt="test">
+        <h1>Fate</h1>
+    </div>
+    <div class="comic">
+        <img src="2.jpg" alt="test">
+        <h1>Hult</h1>
+    </div>
+    <div class="comic">
+        <img src="3.jpg" alt="test">
+        <h1>Figure</h1>
+    </div>
+    <div class="comic">
+        <img src="4.jpg" alt="test">
+        <h1>Super</h1>
+    </div>
+    <div class="comic">
+        <img src="5.jpg" alt="test">
+        <h1>Icon</h1>
+    </div>
+    <div class="comic">
+        <img src="6.jpg" alt="test">
+        <h1>Cat</h1>
+    </div>
 </body>
 </html>
