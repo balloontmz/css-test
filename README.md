@@ -87,3 +87,12 @@ box-sizing 指定盒模型类型，默认为 content-box
 4. 伪类选择器优先级高于类选择器 ``
 5. id 选择器优先级高于伪类选择器.
 
+**note**
+console.warn()、error、info、debug
+```javascript
+
+date = new Date()
+date.getDay()  // 返回星期数，0 是星期天
+date.getMonth() // 获取月份。从 0 开始
+
+```
