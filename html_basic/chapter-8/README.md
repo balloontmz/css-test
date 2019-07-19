@@ -16,3 +16,7 @@ left  盒模型外部  margin 盒模型内部边框外部  padding 边框内部 
 
 box-shadow 盒模型阴影
 text-shadow 文本阴影
+
+## 三列等高布局
+技巧：采用 padding 撑开不整齐的 col，然后用负值 margin 将 col 缩小为原来高度，然后设置父元素的 overflow 将超出部分隐藏。
+

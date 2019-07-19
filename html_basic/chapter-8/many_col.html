@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        img {
+            width: 150px;
+        }
+        .container {
+            width: 100%;
+            overflow: hidden;
+        }
+        .col {
+            float: left;
+            width: 33%;
+            text-align: center;
+            box-sizing: border-box;
+            padding: 20px;
+            background-color: darkturquoise;
+            padding-bottom: 500px;
+            margin-bottom: -500px;
+        }
+        .col:nth-child(2) {
+            background-color: aquamarine;
+        }
+        .col:nth-child(3) {
+            background-color:blueviolet;
+        }
+        .col img {
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="col">
+            <img src="icon.jpg" alt="icon">
+            <h1>First</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing </p>
+        </div>
+        <div class="col">
+            <img src="icon.jpg" alt="icon">
+            <h1>Second</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis odit libero sed saepe, modi non distinctio </p>
+        </div>
+        <div class="col">
+            <img src="icon.jpg" alt="icon">
+            <h1>Third</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing </p>
+        </div>
+    </div>
+</body>
+</html>

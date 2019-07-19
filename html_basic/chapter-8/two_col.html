@@ -12,14 +12,47 @@
             padding: 0;
         }
         .container {
+
             width: 980px;
             height: 700px;
             background: rgba(0, 255, 255, .15);
             /* 边框阴影 */
             box-shadow: 0 0 5px rgba(0, 0, 0, 1) inset;
+            box-sizing: border-box;
+            padding: 40px;
+        }
+        .container::after {
+             /* 防止由于文档流确实导致的样式丢失，测试并为发生此情况 */
+             content: "";
+            display: table;
+            clear: both;
+            /* ----------------------------- */
+        }
+        section article {
+            width: 49%;
+            float: left;
+            position: relative;
         }
         .icon {
-            width: 150px;
+            width: 120px;
+            position: absolute;   
+            top: 0;
+        }
+        section article:first-child {
+            margin-right: 2%;
+        }
+        h1 {
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+        p {
+            font-size: 15px;
+            color: #777;
+        }
+        h1, p {
+            width: 65%;
+            margin-left: 35%;
+            font-family: 'Times New Roman', Times, serif;
         }
     </style>
 </head>
@@ -36,5 +69,13 @@
             <img src="icon.jpg" alt="icon2" class="icon">
         </article>
     </section>
+    <article>
+        <h1>This is first title</h1>
+        <p class="block_p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde amet repudiandae officia dignissimos non, dolorum, reiciendis impedit numquam quos laborum dicta fugiat pariatur ea, nihil qui sapiente voluptates voluptate quas!
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde amet repudiandae officia dignissimos non, dolorum, reiciendis impedit numquam quos laborum dicta fugiat pariatur ea, nihil qui sapiente voluptates voluptate quas!
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde amet repudiandae officia dignissimos non, dolorum, reiciendis impedit numquam quos laborum dicta fugiat pariatur ea, nihil qui sapiente voluptates voluptate quas!
+        </p>
+        <img src="icon.jpg" alt="icon1" class="float_img">
+    </article>
 </body>
 </html>
