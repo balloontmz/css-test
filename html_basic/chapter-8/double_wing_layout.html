@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- 双飞翼布局 -->
+    <!-- double wing layout -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        /* 防止屏幕缩放太小造成样式错乱 */
+        body {
+            min-width: 950px;
+        }
+        img {
+            width: 100px;
+        }
+        #left {
+            background: #16a085;
+            width: 350px;
+        }
+        #main {
+            background: #1abc9c;
+            width: 100%;
+        }
+        #right {
+            background: #14856d;
+            width: 250px;
+        }
+        .col {
+            float: left;
+            height: 500px;
+        }
+        /* 以下为布局的关键样式 */
+        #left {
+            margin-left: -100%;
+            /* position: relative;
+            right: 350px; */
+        }
+        #right {
+            margin-left: -250px;
+        }
+        /* 不需要再设置父容器的 padding 值，而是多加一层 dom 结构设置 margin */
+        /* .container {
+            padding-left: 350px;
+            padding-right: 250px;
+        } */
+        .content {
+            margin: 0 250px 0 350px;
+        }
+
+        .col {
+            color: #fff;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 23px;
+            line-height: 1.5;
+            /* 这个样式在没定义 边框格式的时候出现了报错 */
+            padding: 30px;
+            /* 当前情况下，该属性定义的意义在哪 */
+            /* 因为实际的边框宽度超过了定义的边框宽度，所以样式错乱了？ */
+            box-sizing: border-box;
+        }
+        /* 图片样式 */
+        .col img {
+            float: left;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="main" class="col">
+            <div class="content">
+                    <img src="icon.jpg" alt="icon">
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo perferendis minima maiores iure at aliquid, obcaecati </p>
+            </div>            
+        </div>
+        <div id="left" class="col">
+            <img src="icon.jpg" alt="icon">
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo perferendis minima maiores iure at aliquid, obcaecati </p>
+        </div>
+        <div id="right" class="col">
+            <img src="icon.jpg" alt="icon">
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo perferendis minima maiores iure at aliquid, obcaecati </p>
+        </div>
+    </div>
+</body>
+</html>
