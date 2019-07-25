@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        @font-face {
+            font-family: 'icon-font';
+            src: url('icons.eot'),url('icons.svg'),url('icons.ttf'),url('icons.woff'),
+        }
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            background: #8b8ab3;
+        }
+        .close {
+            font-size: 0px; /*使 span 中的文字不显示*/
+            cursor: pointer; /*指针显示*/
+            display: block;
+            width: 200px;
+            height: 200px;
+            line-height: 100px;
+            border-radius: 50%;
+            background: #fff;
+            color: #8b8ab3;
+            text-align: center;
+        }
+        .close::before {
+            content: '\e609';
+            font-family: 'icon-font';
+            speak-as: none;
+            font-size: 200px;
+            display: block;
+            padding-top: 20%;
+        }
+        .close:hover::before {
+            transform: rotate(360deg);
+            transition: transform 1s linear;
+        }
+    </style>
+</head>
+<body>
+    <section class="container">
+        <span class="close">Close</span>
+    </section>
+</body>
+</html>
