@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            background: aquamarine;
+        }
+        .loader {
+            text-indent: -9999em;
+            position: relative;
+            width: 200px;
+            height: 200px;
+            box-shadow: inset 0 0 0 15px #fff;
+            border-radius: 50%;
+        }
+        .loader::before {
+            position: absolute;
+            content: '';
+            width: 100px;
+            height: 200px;
+            /* background: rgb(131, 124, 102); */
+            background: aquamarine;
+            left: 100px;
+            border-radius: 0 200px 200px 0;
+        }
+        .loader::after {
+            position: absolute;
+            content:  '';
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            left: 0;
+            box-shadow: inset 0 0 0 15px rgba(255, 255, 255, .2);
+        }
+        @keyframes load-effect {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+        .loader::before {
+            animation: load-effect 2s infinite;
+            /* 设置旋转中心 */
+            transform-origin: 0px 100px;
+        }
+
+        .next_loader {
+            text-indent: -9999em;
+            position: relative;
+            width: 200px;
+            height: 200px;
+            background: #fff;
+            background: linear-gradient(to right, #fff 10%, rgba(255, 255, 255, 0) 50%);
+            box-shadow: inset 0 0 0 15px rgba(255, 255, 255, .2);
+            border-radius: 50%;
+        }
+        .next_loader::before {
+            position: absolute;
+            content: '';
+            width: 50%;
+            height: 50%;
+            background: #fff;
+            border-radius: 100% 0 0 0;
+            left: 0;
+            top: 0;
+        }
+        .next_loader::after {
+            background: aquamarine;
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            content: '';
+            position: absolute;
+            /* 不设置这两个元素无法显示，原因暂时未知，推测是因为 content 无法显示出来？？？ */
+            top: 20px;
+            left: 20px;
+        }
+        .next_loader {
+            animation: load-effect 2s infinite linear;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="loader">Loading</div>
+    <div class="next_loader">Loading</div>
+</body>
+</html>
