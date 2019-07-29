@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            background: #d4676a;
+            margin: 50px;
+            font-family: sans-serif;
+        }
+        article {
+            background: #fff;
+            border-radius: 4px;
+            padding: 20px 40px;
+            width: 400px;
+            box-shadow: 5px 7px 1px rgba(0, 0, 0, .1);
+            position: relative;
+        }
+        article h1 {
+            color: #d4676a;
+        }
+        article p {
+            color: #666;
+        }
+        article::after {
+            content: '';
+            position: absolute;
+            /* bottom: -40px; */
+            left: -40px;
+            top: 35px;
+            width: 0px;
+            height: 0px;
+            /* 边框宽度 */
+            border-width: 15px 20px;
+            border-style: solid;
+            border-color: transparent #fff transparent transparent;
+        }
+    </style>
+</head>
+<body>
+    <article>
+        <h1>Lorem ipsum dolor sit amet consectetur adipisicing</h1>
+        <p> 
+            elit. Perferendis unde facilis obcaecati ipsum ipsam esse, officiis fugiat ab perspiciatis non? Autem debitis enim provident numquam accusamus asperiores doloribus iusto ullam!
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, optio delectus facilis nobis officiis ea numquam, voluptates facere mollitia suscipit dignissimos, maxime deserunt magnam blanditiis minima veritatis quisquam impedit. Pariatur!
+        </p>
+    </article>
+</body>
+</html>
