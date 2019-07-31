@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="canvas" width="600" height="400"></canvas>
+    <script text="text/javascript">
+        var canvas = document.getElementById("canvas")
+        var context = canvas.getContext("2d")  // 创建一个 2d 的绘图环境
+        context.strokeStyle = '#e74c3c'
+        // 直线
+        context.lineWidth = 5
+        context.moveTo(100, 100)
+        context.lineTo(200, 200)
+        context.stroke()
+        // 矩形加填充
+        context.strokeRect(250, 100, 100, 100)
+        context.fillStyle = '#ff0'
+        context.fillRect(250, 100, 100, 100)
+        // 圆形
+        context.beginPath()
+        context.arc(450, 150, 50, 0, Math.PI*2)
+        context.closePath()
+        context.stroke()
+        // 填充
+        context.fill()
+        
+    </script>
+</body>
+</html>

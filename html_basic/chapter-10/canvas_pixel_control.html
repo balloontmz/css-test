@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="myCanvas" width="850" height="800"></canvas>
+    <script type="text/javascript">
+        var canvas = document.getElementById('myCanvas')
+        var context = canvas.getContext('2d')
+        var img = new Image()
+        img.src = 'test2.jpeg'
+        img.onload = function () {
+            context.drawImage(img, 0, 0, 850, 800)
+            img = context.getImageData(0, 0, 850, 800) // 此处获取图片像素必须是和网页同域的图片。本地网页域为 file://   图片域不是，所以无法操作
+            var picLength = 850 * 800
+            for (let i = 0; i < picLength * 4; i += 4) {
+                var myRed = img.data[i]
+                var myGreen = img.data[i+1]
+                var myBlue = img.data[i+2]
+                var MyAlpha = img.data[i+3]
+                var myGray = parseInt((myRed + myGreen + myBlue) / 3)
+                img.data[i] = myGray
+                img.data[i+1] = myGray
+                img.data[i+2] = myGray
+            }
+            context.putImageData(img, 0, 0)
+        }
+    </script>
+</body>
+</html>

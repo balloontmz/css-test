@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="myCanvas" width="850" height="800"></canvas>
+    <script type="text/javascript">
+        var canvas = document.getElementById('myCanvas')
+        var context = canvas.getContext('2d')
+        // context.strokeStyle = '#2c3e50'
+        context.fillStyle = '#2c3e50'
+        context.fillRect(0, 0, 850, 800)
+        var img = new Image()
+        img.src = 'test1.png'
+        img.onload = function () { // 图片加载完成再进行绘画
+            // context.save()
+            context.rotate(5*Math.PI*2/100) // 旋转只会影响后绘制的元素  -- save 和 restore 方法，分别保存状态和恢复保存前的状态，用于为后执行的操作不进行旋转用
+            context.drawImage(img, 0, 0)
+            // context.rotate(5*Math.PI*2/100) 
+            // context.restore() // 图片旋转而文字不旋转 -- save - restore
+            context.fillStyle = '#fff'
+            context.font = '48px georgia'
+            context.fillText('This is a test', 230, 200)
+            context.font = '21px georgia'
+            context.fillText('Lorem ipsum dolor sit amet, consectetur adipisicing ', 230, 250)
+        }
+        // context.drawImage(img, 80, 150)
+    </script>
+</body>
+</html>
