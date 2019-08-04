@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #collapse {
+            width: 450px;
+            background: #1abc9c;
+        }
+        #collapse article {
+            width: 450px;
+            background: #9b59b6;
+            border-bottom: 1px solid rgba(255, 255, 255, .3);
+        }
+        #collapse h1 {
+            margin: 0;
+            background: #8e44ad;
+            height: 70px;
+            line-height: 70px;
+            text-indent: 30px;
+            font-size: 24px;
+            position: relative;
+            cursor: pointer;
+            transition: all .5s;
+        }
+        #collapse h1:hover {
+            background: #6e208e;
+        }
+        #collapse h1::after {
+            content: '';
+            width: 0;
+            height: 0;
+            border-width: 7px;
+            border-style: solid;
+            position: absolute;
+            border-color: #fff transparent transparent transparent;
+            right: 20px;
+            top: 35px;
+        }
+        #collapse p {
+            margin: 0;
+            padding: 30px;
+            color: rgba(255, 255, 255, .85);
+        }
+        #collapse h1.hide::after {
+            border-color: transparent #fff transparent transparent;
+            right: 22px;
+            top: 30px;
+        }
+        #collapse p.hide {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <section id="collapse">
+        <article>
+            <h1>Title</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro odio eius omnis perspiciatis debitis delectus consequatur libero eum iure nisi impedit commodi doloremque placeat quos cumque, molestias ex rerum alias.</p>
+        </article>
+        <article>
+            <h1>Title</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro odio eius omnis perspiciatis debitis delectus consequatur libero eum iure nisi impedit commodi doloremque placeat quos cumque, molestias ex rerum alias.</p>
+        </article>
+        <article>
+            <h1>Title</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro odio eius omnis perspiciatis debitis delectus consequatur libero eum iure nisi impedit commodi doloremque placeat quos cumque, molestias ex rerum alias.</p>
+        </article>
+    </section>
+    <script>
+        var title = document.getElementsByTagName('h1')
+        var article = document.getElementsByTagName('article')
+
+        // 隐藏所有
+        function foldAll() {
+            for (let i = 0; i < title.length; i++) {
+                article[i].getElementsByTagName('p')[0].className = 'hide'
+                title[i].className = 'hide'
+            }
+        }
+        for (let i = 0; i < title.length; i++) {
+            title[i].onclick = function () {
+                refreshCollapse(this)
+            }
+        }
+
+        function refreshCollapse(obj) {
+            var targClass
+            if (obj.className == 'hide') {
+                targClass = ''
+            } else {
+                targClass = 'hide'
+            }
+            // 展开一个的同时隐藏其他
+            foldAll()
+            obj.parentNode.getElementsByTagName('p')[0].className = targClass
+            obj.className = targClass
+        }
+    </script>
+</body>
+</html>
