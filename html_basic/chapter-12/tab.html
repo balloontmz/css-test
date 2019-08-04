@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            background: #ecf0f1;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #666;
+        }
+        #tab-container {
+            background: #fff;
+            width: 400px;
+            box-shadow: 1px 1px 2px rgba(0, 0, 0, .15);
+        }
+        #tab-nav {
+            background: #1abc9c;
+            margin: 0;
+            padding: 0;
+        }
+        #tab-nav li {
+            display: inline-block;
+            list-style: none;
+            width: 100px;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+        }
+        #tab-nav a {
+            display: block;
+            color: #fff;
+            text-decoration: none;
+        }
+        #tab-nav a.active {
+            color: #1abc9c;
+            background: #fff;
+        }
+        #tab-content {
+            padding: 25px;
+        }
+    </style>
+</head>
+<body>
+    <section id="tab-container">
+        <ul id="tab-nav">
+            <li><a href="#weather" id="nav-weather">Weather</a></li>
+            <li><a href="#sport" id="nav-sport">Sport</a></li>
+            <li><a href="#travel" id="nav-travel">Travel</a></li>
+        </ul>
+        <div id="tab-content">
+            <article id="weather">
+                <p>weather Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat ullam blanditiis veniam molestias numquam, adipisci aspernatur accusantium reprehenderit inventore ducimus nesciunt quas nam aliquid ab corporis quis rerum error a.</p>
+            </article>
+            <article id="sport">
+                <p>sport Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam architecto perspiciatis aliquid porro autem quisquam culpa quis delectus. Iste eos magni distinctio molestiae tempore? Dolor natus temporibus omnis. Minus, consequuntur.</p>
+            </article>
+            <article id="travel">
+                <p>travel Lorem ipsum, dolor sit amet consectetur adipisicing elit. Id praesentium laudantium quia unde magnam. Consequuntur ab ipsa, alias unde id sapiente facere deserunt. Consequuntur temporibus nisi quas omnis voluptas fugiat?</p>
+            </article>
+        </div>
+    </section>
+    <script>
+        var nav_weather = document.getElementById('nav-weather')
+        var nav_sport = document.getElementById('nav-sport')
+        var nav_travel = document.getElementById('nav-travel')
+        var weather = document.getElementById('weather')
+        var sport = document.getElementById('sport')
+        var travel = document.getElementById('travel')
+        sport.style.display = 'none'
+        travel.style.display = 'none'
+        nav_weather.className = 'active'
+
+        // 用于清空所有显示
+        function hideAll() {
+            weather.style.display = 'none'
+            sport.style.display = 'none'
+            travel.style.display = 'none'       
+            nav_weather.className = ''
+            nav_sport.className = ''
+            nav_travel.className = ''
+        }
+        nav_weather.onclick = function () {
+            hideAll()
+            weather.style.display = 'block'
+            nav_weather.className = 'active'
+        }
+        nav_sport.onclick = function () {
+            hideAll()
+            sport.style.display = 'block'
+            nav_sport.className = 'active'
+        }
+        nav_travel.onclick = function () {
+            hideAll()
+            travel.style.display = 'block'
+            nav_travel.className = 'active'
+        }
+    </script>
+</body>
+</html>

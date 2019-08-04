@@ -57,12 +57,69 @@
             left: 50%;
             margin-left: -8px;
         }
+        #popup {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            transition: all .5s;
+            visibility: hidden;
+            opacity: 0;
+        }
+        #popup.show {
+            visibility: visible;
+            opacity: 1;
+        }
+        #popup-content {
+            position: absolute;
+            z-index: 200;
+            width: 700px;
+            height: 400px;
+            box-sizing: border-box;
+            left: 50%;
+            top: 50%;
+            margin-left: -350px;
+            margin-top: -200px;
+            padding: 30px 50px;
+            background: #fff;
+            box-shadow: 0 10px 15px rgba(0, 0, 0, .2);
+            text-align: center;
+        }
+        #popup-content h1 {
+            color: #555;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #ddd;
+        }
+        #popup-content p {
+            color: #888;
+            font-size: 21px;
+        }
+        #popup-content button {
+            color: #fff;
+            background: #e74c3c;
+            border-radius: 4px;
+            border: 0;
+            font-size: 21px;
+            padding: 10px 50px;
+        }
+        #popup-content button:hover {
+            background: #c03928;
+        }
+        #pop-bg {
+            position: absolute;
+            z-index: 100;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, .3)
+        }
     </style>
 </head>
 <body>
     <main id="container">
         <article>
             <h1>Test1</h1>
+            <a href="">this is a test</a>
             <p>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit earum, quia illum ea assumenda id, pariatur cupiditate dolor alias, itaque maxime? Quae veniam deserunt quia autem natus? Saepe, quo cupiditate!
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit earum, quia illum ea assumenda id, pariatur cupiditate dolor alias, itaque maxime? Quae veniam deserunt quia autem natus? Saepe, quo cupiditate!
@@ -279,6 +336,14 @@
         </article>
     </main>
     <div id="top">Top</div>
+    <div id="popup">
+        <div id="popup-content">
+            <h1>This is  a title</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae atque, velit magnam labore deleniti quam aliquam, nulla, est at totam in similique! Culpa asperiores odit tempore repellat itaque? Nostrum, adipisci?</p>
+            <button id="close">Close</button>
+        </div>
+        <div id="pop-bg"></div>
+    </div>
     <script>
         var nav = document.getElementById('top')
         window.onscroll = function () {
@@ -294,6 +359,34 @@
         nav.onclick = function () {
             document.body.scrollTop = 0
             document.documentElement.scrollTop = 0
+        }
+
+        document.onreadystatechange = function () {
+            if (document.readyState === "interactive") {
+                Init()
+            }
+        }
+        function Init() {
+            var a = document.getElementsByTagName('a')[0]
+            var close = document.getElementById('close')
+            var bg = document.getElementById('pop-bg')
+            var popup = document.getElementById('popup')
+            console.log('a', a)
+            // 经过测试，事件只能绑定单个元素！！！
+            a.onclick = function (e) {
+                console.log('here2')
+                e.preventDefault()
+                console.log('here')
+                popup.classList.toggle('show')
+            }
+            close.onclick = function (e) {
+                e.preventDefault()
+                popup.classList.toggle('show')
+            }
+            bg.onclick = function (e) {
+                e.preventDefault()
+                popup.classList.toggle('show')
+            }
         }
     </script>
 </body>
