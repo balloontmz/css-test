@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- 滑动导航 -->
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+        #wrapper {
+            width: 100%;
+            height: 100%;
+            /* overflow: hidden; */
+            position: relative;
+        }
+        #side-nav {
+            width: 300px;
+            height: 100%;
+            background: #444;
+            position: absolute;
+            top: 0;
+            transform: translateX(-300px);
+            transition: .5s ease all;
+        }
+        #main {
+            width: 100%;
+            padding: 50px;
+            box-sizing: border-box;
+            transition: .5s ease all;
+        }
+        #main.off-display {
+            transform: translateX(300px);
+        }
+        #side-nav.off-display {
+            transform: translateX(0px);
+        }
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <div id="main">
+            <div id="main-nav">
+                <a href="" id="off-canvas-menu">Menu</a>
+            </div>
+            <div id="content">
+                <h1>Title</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam deserunt exercitationem saepe amet distinctio neque ipsum, error voluptas corporis alias hic explicabo asperiores, ea minima animi numquam reiciendis tempore autem?</p>
+            </div>
+        </div>
+    </div>
+    <div id="side-nav">
+        <a href="" id="close-side-nav">Close</a>
+        <ul>
+            <li>Home</li>
+            <li>Events</li>
+            <li>Store</li>
+            <li>Contact</li>
+        </ul>
+    </div>
+    <script>
+        var wrapper = document.getElementById('off-canvas-menu')
+        var sideNav = document.getElementById('close-side-nav')
+        wrapper.onclick = function (e) {
+            e.preventDefault()
+            document.getElementById('main').classList.toggle('off-display')
+            document.getElementById('side-nav').classList.toggle('off-display')
+        }
+        sideNav.onclick = function (e) {
+            e.preventDefault()
+            document.getElementById('main').classList.toggle('off-display')
+            document.getElementById('side-nav').classList.toggle('off-display')
+        }
+    </script>
+</body>
+</html>
