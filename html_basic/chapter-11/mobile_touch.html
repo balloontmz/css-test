@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .guajiang {
+            width: 240px;
+            height: 65px;
+            background: url('test3.jpeg') no-repeat;
+            background-size: 100%;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>刮一刮</h1>
+        <div class="guajiang">
+            <canvas width="240" height="64" id="mask"></canvas>
+        </div>
+        <p id="status">请在以上区域刮奖</p>
+    </main>
+    <script>
+        var canvas = document.getElementById('mask')
+        var context = canvas.getContext('2d')
+        console.log(context)
+        context.fillStyle = '#d1d1d1'
+        context.fillRect(0, 0, 240, 65)
+
+        // 已填充颜色的基础再次进行绘制时，所绘制的区域变得透明
+        context.globalCompositeOperation = 'destination-out'
+        canvas.addEventListener('touchmove', OnTouchMove)
+        function OnTouchMove(event) {
+            event.preventDefault()
+            var touch = event.touches[0] // 获取触摸的第一个点
+            context.beginPath()
+            // 触摸点的左边减去画布的左上角得到相对于画布的坐标
+            context.arc(touch.pageX-canvas.offsetLeft, touch.pageY-canvas.offsetTop, 20, 0, Math.PI*2)
+            context.closePath()
+            context.fillStyle = '#fff'
+            context.fill()
+
+            // 以下判断如果图层像素被抵消超过 90% 为刮奖完毕
+            var imageData = context.getImageData(0, 0, 240, 65) // 获取画布中的所有元素
+            var pixelsArr = imageData.data
+            var loop = pixelsArr.length
+            var transparent = 0  // 设置一个变量记录透明的数量
+            for (let i = 0; i < loop; i+=4) { //   循环遍历每一个像素
+                var alpha = pixelsArr[i+3]  // 获取每一个像素的透明度值
+                if (alpha < 10) {
+                    transparent++
+                }
+            }
+            var percentage = transparent / (loop/4)
+            // 根据透明百分比判断刮奖结束
+            if (percentage > 0.9) {
+                document.getElementById('status').innerHTML = '刮奖结束'
+            }
+        }
+
+        
+    </script>
+</body>
+</html>

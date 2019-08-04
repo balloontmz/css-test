@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <main>
+        <h1>您的位置</h1>
+        <p id="status">地理位置加载中</p>
+    </main>
+    <script>
+        document.onreadystatechange = function () {
+            if (document.readyState === "interactive") {
+                if (navigator.geolocation) {
+                    navigator.geolocation.getCurrentPosition(updateLocation)
+                } else {
+                    document.getElementById('status').innerHTML = '不支持'
+                }
+            }
+        }
+
+        function updateLocation(position) {
+            console.log('位置为：', position)
+            var latitude = position.coords.latitude  // 纬度
+            var longitude = position.coords.longitude
+            var accuracy = position.coords.accuracy  // 精确度
+            var url = 'http://api.map.baidu.com/reverse_geocoding/v3/?ak=fcVhIL2E9xkH11U5j7a5Ygt4S83Pntqs&output=json&coordtype=wgs84ll&location='+ latitude + ',' + longitude + '&callback=foo'
+
+            // jsonp 方式
+            function addScriptTag(src) {
+                var script = document.createElement('script');
+                script.setAttribute("type","text/javascript");
+                script.src = src;
+                document.body.appendChild(script);
+            }
+
+            addScriptTag(url);                
+                
+            // 以下跨域
+            // var ajax = new XMLHttpRequest()
+		    // ajax.onreadystatechange = function(){
+            //     //5.获取响应
+            //     //responseText		以字符串的形式接收服务器返回的信息
+            //     //console.log(ajax.readyState);
+            //     if(ajax.readyState == 4 && ajax.status == 200){
+            //         var msg = ajax.responseText;
+            //         console.log(msg);
+			//     }
+            // }
+            // ajax.open('get', url)
+            
+            // ajax.send(null);
+            
+            document.getElementById('status').innerHTML = '纬度：' + latitude + '经度:' + longitude + '精确度:' + accuracy
+        }
+
+        function foo(data) {
+            console.log('response data: ' + JSON.stringify(data));
+            document.getElementById('status').innerHTML = data.result.formatted_address + 'test'
+        };      
+    </script>
+</body>
+</html>

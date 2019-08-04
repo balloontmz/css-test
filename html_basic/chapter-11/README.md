@@ -11,3 +11,26 @@
 
 ## 其他交互操作
 本地和跨域数据文件加载、本地存储、文件拖放、本地文本操作
+
+### 视差滚动
+未完成
+
+### 刮一刮
+完成
+
+### 摇一摇
+未完成
+
+### 本地数据文件加载 
+未完成
+
+### 本地文件操作
+未完成
+
+### 地理位置
+完成
+
+### localstorage 操作
+未完成
+
+[docoumt onready 事件](https://developer.mozilla.org/zh-CN/docs/Web/API/Document/readyState)
